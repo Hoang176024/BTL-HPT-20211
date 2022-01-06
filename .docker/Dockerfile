@@ -36,3 +36,5 @@ RUN cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini && \
 
 RUN a2ensite default-ssl
 RUN a2enmod ssl
+
+EXPOSE 9000

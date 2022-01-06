@@ -28,8 +28,8 @@ class CreatePurchasesTable extends Migration
 
         Schema::create('suppliers', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique('name_index');
-            $table->string('email')->unique('email_index');
+            $table->string('name')->unique('supplier_name_index');
+            $table->string('email')->unique('supplier_email_index');
             $table->string('phone', 50)->nullable();
             $table->string('address', 100)->nullable();
             $table->timestamps();
