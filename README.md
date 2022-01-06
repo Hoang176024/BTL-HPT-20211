@@ -1,4 +1,4 @@
-# Team1: Hệ thống quản lý các điểm bán hàng: Point of Sale System
+# Hệ thống quản lý các điểm bán hàng: Point of Sale System
 
 -   Là một hệ thống quản lý kho / hàng tồn kho dựa trên laravel (php) cho phép bạn quản lý hàng tồn kho, bán hàng, mua hàng, khách hàng, hóa đơn, thanh toán ...
 
