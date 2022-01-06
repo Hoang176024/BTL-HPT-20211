@@ -28,8 +28,7 @@ class ProductController extends Controller
     {
         $request->user()->authorizeRoles(['employee', 'admin']);
         $brands = Brand::paginate();
-        $units = Unit::paginate();
-        return view('admin.products.create', compact(['brands', 'units']));
+        return view('admin.products.create', compact(['brands']));
     }
 
     public function store(ProductRequest $request)
@@ -51,9 +50,8 @@ class ProductController extends Controller
         $request->user()->authorizeRoles(['employee', 'admin']);
         $product = Product::find($id);
         $brands = Brand::paginate();
-        $units = Unit::paginate();
         if ($product) {
-            return view('admin.products.edit', compact(['product', 'brands', 'units']));
+            return view('admin.products.edit', compact(['product', 'brands']));
         } else {
             abort(404);
         }

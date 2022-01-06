@@ -49,10 +49,6 @@
                             <div>{{$product->expired_date}}</div>
                         </div>
                         <div class="form-group">
-                            <div><strong>Unit</strong></div>
-                            <div>{{$product->unit->name}}</div>
-                        </div>
-                        <div class="form-group">
                             <div><strong>Barcode</strong></div>
 
                             {!! DNS1D::getBarcodeHTML($product->barcode, "C128",1.4,22) !!}

@@ -36,13 +36,12 @@
                                 onerror="this.onerror=null; this.src='https://via.placeholder.com/150'"
                                 alt="{{$user_name->username}}}}" />
                             <div class="pl-sm-4 pl-2" id="img-section"> <b>Profile Photo</b>
-                                <p>Accepted file type .png. Less than 1MB</p>
                                 <div class="row mb-3"><label for="photo" class="upload">
                                         Upload
                                     </label>
                                     <div class="col-sm-10">
                                         <input class="form-control @error('photo') is-invalid @enderror" id="photo"
-                                            name="photo" type="file" onchange="readURL(this);" />
+                                            name="photo" type="file" accept="image/png, image/gif, image/jpeg" onchange="readURL(this);" />
                                         @error('photo')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror

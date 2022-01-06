@@ -3,7 +3,7 @@
     @php
 
     @endphp
-    <a href="index3.html" class="brand-link">
+    <a href="{{route('admin.dashboard')}}" class="brand-link">
         <img src="{{asset(config('site-settings.site_logo'))}}" alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">{{config('site-settings.site_title')}}</span>
@@ -69,24 +69,6 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('admin.stores.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Change POS Settings</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/layout/boxed.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>User Roles and Permissions</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('admin.customergroups.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Customer Groups</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a href="{{route('admin.warehouses.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Warehouses</p>
@@ -104,11 +86,6 @@
                                 <p>Brands</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{route('admin.units.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Units</p>
-                            </a>
                         </li>
                     </ul>
                 </li>
@@ -240,29 +217,6 @@
                             <a href="{{route('admin.suppliers.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Suppliers</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-link"></i>
-                        <p>
-                            Mapping Categories Manage
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{route('admin.google-categories.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Google Categories</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('admin.facebook-categories.index')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Facebook Categories</p>
                             </a>
                         </li>
                     </ul>

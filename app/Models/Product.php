@@ -14,7 +14,6 @@ class Product extends Model
         'quantity',
         'brand_id',
         'expired_date',
-        'unit_id',
         'type',
         'barcode',
         'category_id',
@@ -30,10 +29,6 @@ class Product extends Model
     public function brand()
     {
         return $this->belongsTo(Brand::class);
-    }
-    public function unit()
-    {
-        return $this->belongsTo(Unit::class);
     }
     public function createdBy()
     {

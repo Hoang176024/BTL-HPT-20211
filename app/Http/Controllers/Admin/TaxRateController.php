@@ -42,7 +42,7 @@ class TaxRateController extends Controller
         $request->user()->authorizeRoles(['employee', 'admin']);
         $tax = TaxRate::find($id);
         if ($tax) {
-            return view('admin.tax_rate.edit', compact('tax_rate'));
+            return view('admin.tax_rate.edit', compact('tax'));
         } else {
             abort(404);
         }

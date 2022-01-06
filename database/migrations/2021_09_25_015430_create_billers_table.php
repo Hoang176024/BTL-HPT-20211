@@ -16,8 +16,8 @@ class CreateBillersTable extends Migration
         Schema::create('billers', function (Blueprint $table) {
             $table->id();
             $table->unsignedInteger('store_id');
-            $table->string('name')->unique('name_index');
-            $table->string('email')->unique('email_index');
+            $table->string('name')->unique('biller_name_index');
+            $table->string('email')->unique('biller_email_index');
             $table->string('phone', 50);
             $table->string('address', 200);
             $table->timestamps();

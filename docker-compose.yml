@@ -11,12 +11,18 @@ services:
             - MYSQL_DATABASE=lara_sql
             - MYSQL_USER=lara_user
             - MYSQL_PASSWORD=123456
+        volumes:
+            - dbdata:/var/lib/mysql/
+        networks:
+            - app-network
     adminer:
         image: adminer
         container_name: team1-adminer
         restart: always
         ports:
             - "2221:8080"
+        networks:
+            - app-network
     app:
         build:
             context: .
@@ -27,3 +33,27 @@ services:
             - "2229:80"
         volumes:
             - ./:/var/www/html/
+            - ./php/laravel.ini:/usr/local/etc/php/conf.d/laravel.ini
+        networks:
+            - app-network    
+    webserver:
+        image: nginx:alpine
+        container_name: webserver
+        restart: unless-stopped
+        tty: true
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./:/var/www/html/
+            - ./nginx/conf.d/:/etc/nginx/conf.d/
+            - ./nginx/ssl/:/etc/nginx/ssl/
+        networks:
+            - app-network
+networks:
+  app-network:
+    driver: bridge
+#Volumes
+volumes:
+  dbdata:
+    driver: local

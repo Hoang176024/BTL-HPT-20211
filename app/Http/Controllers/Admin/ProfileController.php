@@ -56,7 +56,7 @@ class ProfileController extends Controller
         {
             $photo = $request->file('photo');
             $path = $photo->storeAs(
-                'uploads', $photo->getClientOriginalName()
+                'uploads', $photo->getClientOriginalName() , 'local'
                 );
             return $path;
         }

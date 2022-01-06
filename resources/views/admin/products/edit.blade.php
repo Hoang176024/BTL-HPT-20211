@@ -83,14 +83,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label> Unit</label>
-                            <select id="unit_id" name="unit_id" class="form-control select2">
-                                @foreach($units as $unit)
-                                <option value="{{$unit->id}}">{{$unit->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <label for="inputBarcode">Barcode</label>
                             <input type="text" id="inputBarcode" name="barcode"
                                 class="form-control @error('barcode') is-invalid @enderror"

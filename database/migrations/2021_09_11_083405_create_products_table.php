@@ -15,12 +15,12 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 170)->unique('name_index');
+
+            $table->string('name', 170)->unique('product_name_index');
             $table->decimal('price');
             $table->unsignedInteger('quantity')->default(0);
             $table->unsignedInteger('brand_id');
             $table->date('expired_date');
-            $table->unsignedInteger('unit_id');
             $table->string('barcode');
             $table->string('type', 10)->default('standard');
             $table->unsignedInteger('category_id');
@@ -35,11 +35,6 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('description')->nullable();
         });
-        Schema::create('units', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->text('description')->nullable();
-        });
     }
 
     /**
@@ -50,7 +45,6 @@ class CreateProductsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('products');
-        Schema::dropIfExists('units');
         Schema::dropIfExists('brands');
     }
 }

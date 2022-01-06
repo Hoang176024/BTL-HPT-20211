@@ -11,7 +11,12 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
+mix.js('resources/js/app.js', 'public/assets/js')
+    .js('resources/js/demo.js', 'public/assets/js')
+    .postCss('resources/css/app.css', 'public/assets/css', [
         //
-    ]);
+    ])
+    .copy('resources/js/*.min.js', 'public/assets/js')
+    .copyDirectory('resources/js/pages', 'public/assets/js/pages')
+    .copy('resources/css/*.min.css', 'public/assets/css')
+    .copy('resources/css/alt/adminlte.*.min.css', 'public/assets/css/alt');
